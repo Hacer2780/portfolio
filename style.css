@@ -1,60 +1,144 @@
-/* style.css */
+:root {
+  --primary-color: #0066cc;
+  --primary-dark: #004b99;
+  --accent-yellow: #ffeeaa;
+  --footer-bg: #424242;
+  --bg-light: #f2f2f2;
+  --font-main: 'Inter', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
   margin: 0;
-  padding: 20px;
-  text-align: center;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: #333;
 }
 
 header {
-  background-color: #0066cc;
+  background-color: var(--primary-color);
   color: white;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin: 20px auto;
+  max-width: 1000px;
+  width: 95%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
 .project-card {
   background: white;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
   border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-.project-card a {
-  color: #0066cc;
+.project-card h2 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: #111;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 10px 0 15px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links a {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
   text-decoration: none;
-  margin: 0 5px;
-  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.links a:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
 }
 
 footer {
-  background-color: 	#424242;
+  background-color: var(--footer-bg);
   color: white;
-  padding: 20px;
+  padding: 20px 15px;
   text-align: center;
   font-size: 0.95rem;
   margin-top: 40px;
   border-radius: 10px;
+  width: 95%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+
 footer a {
-  color: #ffeeaa;
+  color: var(--accent-yellow);
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  header,
+  footer,
+  .project-card {
+    width: 95%;
+  }
+
+  .project-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
+  .links a {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
 }
 
